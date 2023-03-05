@@ -1,9 +1,11 @@
-/******************* PREPARATION DE LA LISTE DES PRODUITS **********************$***********/
+/**********************************************************************
+ *  PREPARATION DE LA LISTE DES PRODUITS 
+ * ********************************************************************/
 let products = [
     {
         id : 1,
-        nom: 'Blouson Cuir Homme OSX',
-        image: 'https://s1.rockagogostatic.com/ref/pls/pls15/blouson-cuir-mec-marque-osx-brando-jacket-pr.jpg',
+        nom: 'CHAISE CLASSIQUE - Art Object',
+        image: 'https://images.unsplash.com/photo-1656386080035-494539b16898?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80',
         description: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Non, laboriosam.',
         prix: 225,
         instock : 100
@@ -11,47 +13,47 @@ let products = [
     {
         id : 2,
         nom: 'POLO CINTRE SLIM FIT ',
-        image: 'https://www.cdiscount.com/pdt2/1/7/8/1/700x700/mp59790178/rw/tee-shirt-homme-imprime-col-arrondi-manches-courte.jpg',
+        image: 'https://images.unsplash.com/photo-1665390856430-d962edb95ab1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80',
         description: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Non, laboriosam.',
         prix: 75,
         instock : 15
     },
     {
         id :3,
-        nom: 'Robe rose croisée à boucler',
-        image: 'https://www.cdiscount.com/pdt2/1/8/0/1/700x700/mp54405180/rw/sky-femmes-vintage-automne-hiver-manches-longues-d.jpg',
+        nom: 'Ensemble Boucle - Chaussure',
+        image: 'https://images.unsplash.com/photo-1583009820765-26fd63af8819?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80',
         description: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Non, laboriosam.',
         prix: 50,
         instock : 15
     },
     {
         id :4,
-        nom: 'Sneakers Adidas Original',
-        image: 'https://www.kiffoo.com/7220-large_default/basket-adidas-original-homme.jpg',
+        nom: 'SEIKO LUXE ORIGINAL',
+        image: 'https://images.unsplash.com/photo-1661030420771-245b957d331c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80',
         description: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Non, laboriosam.',
         prix: 159,
         instock : 15
     },
     {
         id : 5,
-        nom: 'Pantalon jogging Nike',
-        image: 'https://images.unsplash.com/photo-1673038099756-0e056130b7a0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=735&q=80',
+        nom: 'Basket Adidas  New Look',
+        image: 'https://images.unsplash.com/photo-1656944227421-416b1d2186c9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=701&q=80',
         description: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Non, laboriosam.',
         prix: 27,
         instock : 15
     },
     {
         id: 6,
-        nom: 'Sportwear Femme Gris',
-        image: 'https://contents.mediadecathlon.com/p1691566/k$863fad91e6bb4a2de8373ca10dfc3a53/sq/sous-vetements-thermique.jpg?format=auto&f=800x0',
+        nom: 'Lunette VUE - Marc Jacobs',
+        image: 'https://images.unsplash.com/photo-1658690299170-bf1c6f8e312f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80',
         description: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Non, laboriosam.',
         prix: 20,
         instock : 15
     },
     {
         id : 7,
-        nom: 'Doudoune Rouge Homme',
-        image: 'https://www.cdiscount.com/pdt2/2/7/7/1/700x700/mp40057277/rw/doudoune-rouge-homme-marque-duvet-de-canard-blanc.jpg',
+        nom: 'CHAINE OR DIOR',
+        image: 'https://images.unsplash.com/photo-1659708701940-e60893ef03d0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80',
         description: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Non, laboriosam.',
         prix: 60,
         instock : 15
@@ -59,15 +61,15 @@ let products = [
     {
         id : 8,
         nom: 'UNDER ARMOUR BLITZING',
-        image: 'https://images.unsplash.com/photo-1648931851212-3020920ba36e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80',
+        image: 'https://images.unsplash.com/photo-1659458104812-f02fbf6c2263?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=690&q=80',
         description: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Non, laboriosam.',
         prix: 22,
         instock : 15
     }
 ];
-/****************************************************************************
- * TRAITEMENT DU PANIER
- * ************************************************************************** */
+        /******************************************************
+        *                  TRAITEMENT DU PANIER               *
+        ******************************************************/
 
 // SELECTION DES  ELEMENTS
 const produits = document.querySelector(".produits");
@@ -109,7 +111,6 @@ function addToPanier(id) {
         changeQuantity("plus", id);
     } else {
         const element = products.find((produit) => produit.id === id);
-        
         panier.push({
             ...element,
             quantite: 1,
@@ -191,5 +192,39 @@ return {
 };
     });
     updatePanier();
-    
 }
+            /****************************************************************
+            *     VALIDATION DE LA #ModalValidationCommande                 *
+            *****************************************************************/
+function finaliser() {
+    // remplir les infos client
+     $('#nomClient').html('<b> ' + $('#username').val() + '</b>')
+     $('#prenomClient').html('<b> ' + $('#firstname').val() + '</b>')
+     $('#telephoneClient').html('<b> ' + $('#telephone').val() + '</b>')
+     $('#emailClient').html('<b> ' + $('#email').val() + '</b>')
+     $('#addresseClient').html('<b> ' + $('#addresse').val() + '</b>')
+     console.log('======== '+$('#addresse').val()+ ' ========')
+     
+     // remplir le panier :
+     let listFinal = "";
+     $("#listFinal").empty()
+     var totalPrix = 0;
+     panier.forEach(element => {
+   
+       listFinal += '<li class="list-group-item">';
+       listFinal += '<div class="fw-bold">' + element.nom + '</div>';
+       listFinal += ' <div class="row"> <div class="col-6">Prix unitaire :';
+       listFinal += ' <b>' + element.prix + '€</b></div><div class="col-6"> ';
+       listFinal += ' Quantité : <b>' + element.quantite + '</b></div></div></li>';
+       totalPrix += element.prix * element.quantite;
+   
+     });
+ 
+     $('#listFinal').append(listFinal);
+     $('#totalPaye').html(totalPrix.toFixed(2)+ '€');
+   }
+   
+   //FINALISER COMMANDE ET PAYER
+   $(".finaliser").click(function () {
+     document.location.href = "redirect.html"
+   })

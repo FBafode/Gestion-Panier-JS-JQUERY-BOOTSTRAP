@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="panier.css">
 
      <script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>
-    <script>src="animation.js"</script>
+    <script defer src="animation.js"></script>
     <script src="https://kit.fontawesome.com/33e495fb35.js" crossorigin="anonymous"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
@@ -50,14 +50,14 @@
             </div>
         </div>
     </nav>
-     <!-----------------   Debut header ------------->
+                <!---------- Debut header ------------->
      <header></header>
-     <!-------------   Fin header  -------------->
-      <!-------------- debut affichage produits ------------->
+                <!----------- Fin header -------------->
+                <!----------- debut affichage produits ------->
     <div class="row produits" id="produitContent"> </div>
-    <!------------ fin affciahge produits    ------------- -->
+                <!--------- fin affciahge produits ---------->
 
-    <!-- -------------- right offcanvas ----------------->
+                <!--------- right offcanvas --------->
     <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
         <div class="offcanvas-header">
             <h4 class="offcanvas-title" id="offcanvasRightLabel">Mon panier</h4>
@@ -71,13 +71,13 @@
                 <button type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasLeft"
                     aria-controls="offcanvasLeft" class="btn btn-primary btn-sm">Validez votre commande</button>
             </div>
-            <!------------------ liste panier -------------------->
+                  <!--------- liste panier ---------->
 <div class="panier">
             <div class="panier-header">
                 <div class="column1">Produit</div>
                 <div class="column2">Prix Unit</div>
                 <div class="column3">Quantité</div>
-                <div class="column4"></div> <!---Pour prevoir le décallage pour ajustement des colonnes-->
+                <div class="column4"></div> <!--- Pour prevoir le décallage pour ajustement des colonnes --->
             </div>
             <div class="panier-elements">
                 <!-- affichage des éléments du panier ici -->
@@ -88,18 +88,18 @@
                 </div>
             </div>
         </div>
-            <!------------- Fin liste panier------------------>
+            <!--------- Fin liste panier  --------->
         </div>
     </div>
-    <!---------------------- fin right canvas ---------------->
-    <!------------- debut left canvas ------------------>
+                <!---------- fin right canvas -------->
+                <!---------- debut left canvas -------->
     <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasLeft" aria-labelledby="offcanvasLeftLabel">
         <div class="offcanvas-header">
             <h5 class="offcanvas-title" id="offcanvasLeftLabel">Valider ma commande</h5>
             <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         </div>
         <div class="offcanvas-body" id="alerts">
-    <!-------------- DEBUT FORMULAIRE----------------->
+                <!----------- DEBUT FORMULAIRE ----------->
             <div class="text-form">
                 <form id="final" class="form">
                     <div class="mb-3 form-field">
@@ -136,19 +136,55 @@
                         <small></small>
                     </div>
                     <div class="form-field">
+                        <!-------- Appelle de la fonction finaliser --------->
                         <button type="submit" 
+                        
                         aria-controls="" id="submit" class="btn btn-primary btn-sm" onclick="finaliser()">Enregistrer</button>
                     </div>
                 </form>
             </div>
         </div>
     </div>
-    <!------------ fin left canvas -------------->
+                    <!---------- fin left canvas ----------->
 
-
-
-
+                    <!----------- DEBUT CANVAS SYNTHESE COMMANDE --------->
+    <div class="modal fade" id="ModalValidationCommande" tabindex="-1" aria-labelledby="ModalValidationCommande" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-scrollable">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="ModalValidationCommande">Synthèse de la commande et informations</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <h3>Vos informations</h3>
+              <div class="row mb-2">
+                <div class="col-6">Nom: <span id="nomClient"></span> </div>
+                <div class="col-6">Prénom: <span  id="prenomClient"></span> </div>
+              </div>
+              <div class="row mb-2">
+                <div class="col-6">N° Tél: <span id="telephoneClient"></span> </div>
+                <div class="col-6">Email: <span id="emailClient"></span> </div>
+              </div>
+              <div class="row mb-2">
+                <div class="col-12">Adresse: <span  id="addresseClient"></span> </div>
+              </div>
+              <h3>Votre panier</h3>
+              
+              <ul class="list-group list-group-flush" id="listFinal"></ul>
+              
+              <div class="alert alert-danger" role="alert">
+                Total à payer : <span id="totalPaye"></span>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
+              <button type="button" class="btn btn-primary finaliser">Finaliser la commande et payer</button>
+            </div>
+          </div>
+        </div>
+      </div>
+                    <!--------- FIN CANVA SYNTHESE ------------>
     <script src="panier.js"></script>
-    <script src="Form.js"></script>
+    <script src="form.js"></script>
 </body>
 </html>
