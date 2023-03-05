@@ -69,3 +69,112 @@ header{
         cursor: pointer;
         padding-left: 10px;
     }
+    .offcanvas, .offcanvas-lg, .offcanvas-md, .offcanvas-sm, .offcanvas-xl, .offcanvas-xxl {
+        --bs-offcanvas-zindex: 1045;
+        --bs-offcanvas-width: 600px;
+    
+    }
+    
+    .start-100 {
+        left: 98%!important;
+    }
+    /* panier */
+    .panier{
+        height: 100%;
+        width: 100%;
+      
+        position: relative;
+      }
+      /* panier header */
+     .panier-header{
+        display: flex;
+        justify-content: space-around;
+        padding: 10px 0;
+      }
+      /* elements panier */
+     .panier-elements{
+        max-height: calc(100vh - 247px);
+        overflow-y: auto;
+        overflow-x: hidden;
+      }
+      /* element panier */
+      .panier-element {
+        display: flex;
+        justify-content: space-around;
+        padding: 10px 0;
+      }
+     .panier-element div {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: rgba(233, 228, 194, 0.843);
+      }
+      /* info element */
+      .panier-element .element-info {
+        flex: 1;
+      
+        border-radius: 0 10px 10px 0;
+      
+        padding: 10px;
+      }
+      /* .panier-element .element-info:hover {
+        background-color: rgba(0, 255, 229, 0.903);
+        cursor: pointer;
+      } */
+     
+      /* unit prix*/
+    .panier-element .unit-prix {
+        flex: 1;
+        font-size: 1.2rem;
+      }
+      /* nombre */
+     .panier-element .units {
+        flex: 1;
+      }
+     .panier-element .units .number {
+        margin: 0 10px;
+      
+        font-size: 1.2rem;
+      }
+      .panier-element .units .btn {
+        width: 15px;
+        height: 15px;
+      
+        background-color: rgb(242, 255, 58);
+      
+        border-radius: 50%;
+      
+        font-weight: bold;
+      
+        cursor: pointer;
+    
+      }
+      
+      /* panier footer */
+      .panier-footer{
+        width: 100%;
+        background-color: rgb(255, 21, 21);
+        /* position: absolute; */
+        bottom: 0;
+        left: 0;
+      
+        border-left: 1px solid rgb(var(--right-side-bg-color));
+      }
+    .panier-footer div {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      
+        padding: 15px 0;
+      
+        font-size: 1.3rem;
+      }
+      .panier-footer .subtotal {
+        background-color: rgb(221, 211, 211);
+      }
+      .error{
+        color: #D8000C;
+        background-color: #FFBABA;
+    
+      }
+    

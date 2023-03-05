@@ -92,3 +92,104 @@ function affichageProduits() {
 }
 //appelle de la focntion pour l'affichage
 affichageProduits();
+
+// Declaration du panier à vide ou récupération du contenu via le localStorage
+let panier = [] || JSON.parse(localStorage.getItem("PANIER"));
+
+//Mise à jour du panier
+updatePanier();
+//console.log(panier);
+
+//Fonction d'ajout produit dans le panier
+function addToPanier(id) {
+    // verification si le produit n'existe pas dans le panier
+    if (panier.some((element) => element.id === id)) {
+
+        //on augmente juste la quantité si le produit existe dèjà dans le panier
+        changeQuantity("plus", id);
+    } else {
+        const element = products.find((produit) => produit.id === id);
+        
+        panier.push({
+            ...element,
+            quantite: 1,
+        });
+    }
+    //rappelle de la fonction de mise à jour pour actualiser
+    updatePanier();
+}
+
+//Mise à jour des valeurs des elements du panier et sauvegarde dans le localStorage
+function updatePanier (){
+    affichageElementsPanier();
+    affichageSubtotal();
+
+//sauvegarde des données du panier dans le local storage
+ localStorage.setItem("PANIER", JSON.stringify(panier));
+}
+
+//Cacul et affichage du subtotal
+function affichageSubtotal(){
+    let totalPrix = 0,
+    totalElements =0;
+
+panier.forEach((element) => {
+    totalPrix += element.prix * element.quantite;
+    totalElements += element.quantite;
+});
+subtotal.innerHTML= `Subtotal (${totalElements} elements) : ${totalPrix.toFixed(2)} €)`;
+totalElementsInPanier.innerHTML = totalElements;
+
+}
+
+// Affichage des elements du panier
+function affichageElementsPanier(){
+    panierElements.innerHTML = ""; // vider le panier
+    panier.forEach((element) => {
+    panierElements.innerHTML += `
+    <div class="panier-element" id="produit${element.id}">
+    <div class="element-info" >
+        <h4>${element.nom}</h4>
+    </div>
+    <div class="unit-prix">
+    ${element.prix}<small> €</small>
+    </div>
+    <div class="units">
+        <div class="btn minus" onclick="changeQuantity('minus', ${element.id})">-</div>
+        <div class="number">${element.quantite}</div>
+        <div class="btn plus" onclick="changeQuantity('plus', ${element.id})">+</div>           
+    </div>
+    <div><button class="btn btn-danger" id=${element.id} onclick="removeElementFromPanier(${element.id})" type="button">Supprimmer</button></div>
+    </div>
+     ` ; });
+  }
+
+//Supprimer un element du apnier
+function removeElementFromPanier(id){
+   // panier = panier.filter((element)=> element.id !== id);
+    panier.splice(id, 1); 
+    console.log(id);
+    $('#produit'+id).remove();
+    //mise à jour du panier
+    updatePanier();
+}
+
+//changement de la quantité 
+function changeQuantity(action, id) {
+    panier = panier.map((element) => {
+let quantite = element.quantite;
+if (element.id === id) {
+    if (action === "minus" && quantite > 1) {
+        quantite--;
+    } else if(action == "plus" && quantite < element.instock) {
+        quantite++;
+    } 
+} 
+return {
+    ...element,
+    quantite,
+};
+    });
+    updatePanier();
+    
+}
