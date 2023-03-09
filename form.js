@@ -8,11 +8,7 @@ const addresseEl = document.querySelector("#addresse");
 const form = document.querySelector("#final");
 const envoiCommande = document.querySelector("#submit");
 
-let form_group = document.querySelectorAll(
-  "input[type=text]",
-  "input[type=email]",
-  "input[type=password]"
-);
+let form_group = document.querySelectorAll(".form-field input");
 
 var regMin = /[a-z]/;
 var regMaj = /[A-Z]/;
@@ -43,25 +39,6 @@ function EmptyCheck() {
   });
   return valid;
 }
-
-//verification des champs
-form_group.forEach((index) => {
-  index.addEventListener("keyup", function () {
-    if ((index.type = "text")) {
-      EmptyCheck();
-    //  } else  if ((index.type = "email")) {
-    //   checkEmail();
-    // } else if ((index.type = "password")) {
-    //   checkPassword();
-    // } else if ((index.name = "confirmPassword")) {
-    //   checkConfirmPassword();
-    // } else if ((index.name ='telephone')) {
-    //   checkPhone();
-    } else {
-      showSuccess(index);
-    }
-  });
-});
 
 //Fonction de verification du numéro de téléphone
 const checkPhone = () => {
@@ -240,7 +217,8 @@ const debounce = (fn, delay = 500) => {
     }, delay);
   };
 };
-//
+//Le code sera éxécuté au bout de 500ms et le timer sera réinitialisé (reduction du nombre d'appel des fonctions)
+
 form.addEventListener("input", debounce(function (e) {
     switch (e.target.name) {
       case "email":
@@ -254,6 +232,8 @@ form.addEventListener("input", debounce(function (e) {
       case "confirmPassword":
         checkConfirmPassword();
         break;
+        default:
+          EmptyCheck();
     }
   })
 );
